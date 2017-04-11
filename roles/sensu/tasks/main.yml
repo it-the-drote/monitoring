@@ -4,7 +4,7 @@
 
 - name: Add sensu repository
   template:
-    src: "{{ ansible_env.PWD }}/roles/sensu/templates/repo.list.j2"
+    src: roles/sensu/templates/repo.list.j2
     dest: "/etc/apt/sources.list.d/sensu.list"
   become: true
 
@@ -30,3 +30,4 @@
     - sensu-server
     - sensu-client
     - uchiwa
+  become: true
