@@ -1,0 +1,9 @@
+- name: Collecting Facts
+  hosts: production
+  gather_facts: yes
+
+- name: Install Sensu
+  hosts: production
+  roles:
+    - test
+    - sensu
