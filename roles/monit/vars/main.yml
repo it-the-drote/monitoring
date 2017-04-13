@@ -1,0 +1,7 @@
+config_templates:
+  monitrc:
+    tmpl_src: roles/monit/templates/monitrc.j2
+    tmpl_dest: /etc/monit/monitrc
+    tmpl_owner: root
+    tmpl_group: root
+    tmpl_mode: 600

@@ -1,0 +1,32 @@
+- name: Update apt cache
+  apt:
+    update_cache: true
+  become: true
+  ignore_errors: true
+
+- name: Install Monit
+  apt: name={{ item }} state=installed
+  with_items:
+    - monit
+    - jq
+  become: true
+
+- name: Install Monit configs
+  template:
+    src: "{{ item.value.tmpl_src }}"
+    dest: "{{ item.value.tmpl_dest }}"
+    owner: "{{ item.value.tmpl_owner }}"
+    group: "{{ item.value.tmpl_group }}"
+    mode: "{{ item.value.tmpl_mode }}"
+  with_dict: "{{ config_templates }}"
+  become: true
+
+- name: Test Monit config
+  command: "monit -t"
+  become: true
+
+- name: Restart Monit
+  service:
+    name: "monit"
+    state: restarted
+  become: true
