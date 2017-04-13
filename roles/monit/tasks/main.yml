@@ -21,6 +21,15 @@
   with_dict: "{{ config_templates }}"
   become: true
 
+- name: Copy Monit plugins
+  copy:
+    src: roles/monit/files/plugins
+    dest: /etc/monit/
+    mode: 0700
+    owner: root
+    group: root
+  become: true
+
 - name: Test Monit config
   command: "monit -t"
   become: true
