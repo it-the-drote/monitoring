@@ -30,6 +30,15 @@
     group: root
   become: true
 
+- name: Copy Monit handlers
+  copy:
+    src: roles/monit/files/handlers
+    dest: /etc/monit/
+    mode: 0700
+    owner: root
+    group: root
+  become: true
+
 - name: Test Monit config
   command: "monit -t"
   become: true

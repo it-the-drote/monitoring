@@ -1,0 +1,5 @@
+checks_templates:
+  bullshit:
+    plugin: "check_file"
+    argument: "/tmp/bullshit"
+    notify: "telegram"

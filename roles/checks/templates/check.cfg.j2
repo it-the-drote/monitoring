@@ -1,0 +1,2 @@
+check program {{ item.key }} with path /etc/monit/plugins/{{ item.value.plugin }}.sh {{ item.value.argument }}
+	if changed status then exec "/etc/monit/handlers/{{ item.value.notify }}.sh"

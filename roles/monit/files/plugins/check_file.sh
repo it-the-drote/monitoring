@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+source /etc/monit/plugins/okfail.sh
+
 if [[ -f $1 ]]; then
-	echo "File $1 is in place"
-	exit 0
+	ok "File $1 is in place."
 else
-	echo "File $1 is not in place!"
-	exit 2
+	fail "File $1 is not in place!"
 fi

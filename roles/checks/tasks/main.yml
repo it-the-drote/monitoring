@@ -1,0 +1,19 @@
+- name: Install checks
+  template:
+    src: "roles/checks/templates/check.cfg.j2"
+    dest: "/etc/monit/conf.d/{{ item.key }}.cfg"
+    owner: "root"
+    group: "root"
+    mode: 0600
+  with_dict: "{{ checks_templates }}"
+  become: true
+
+- name: Test Monit config
+  command: "monit -t"
+  become: true
+
+- name: Restart Monit
+  service:
+    name: "monit"
+    state: restarted
+  become: true
