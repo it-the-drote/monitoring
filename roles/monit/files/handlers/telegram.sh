@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 
-source /usr/lib/leicht/leicht.sh
-
 text=""
+tail="\\\\nCheck name: $MONIT_SERVICE\\\\nDescription: $MONIT_DESCRIPTION"
 
 case $MONIT_PROGRAM_STATUS in
   "0")
-    text="✅✅✅ $MONIT_DESCRIPTION"
+    text="✅✅✅"
     ;;
   "1")
-    text="⚠️⚠️⚠️ $MONIT_DESCRIPTION"
+    text="⚠️⚠️⚠️"
     ;;
   "2")
-    text="❌❌❌ $MONIT_DESCRIPTION"
+    text="❌❌❌"
 esac
 
-leicht_send_message `cat /etc/datasources/pisun-default-chat` "0" "[sensu] $text" "false" /tmp/pisun.socket
+echo -e '{ "actionType": "SendMessage", "actionSettings": {"chatID": '`cat /etc/datasources/pisun-default-chat`', "replyToMessageID": 0, "text": "'"$text$tail"'", "disableWebPagePreview": true }}' | socat stdio unix-connect:/tmp/pisun.socket
 exit 0
