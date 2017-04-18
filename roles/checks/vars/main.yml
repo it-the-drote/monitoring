@@ -7,5 +7,5 @@ checks_templates:
   bullshit:
     plugin: "check_file"
     argument: "/tmp/bullshit"
-    interval: "{{ 2 * hours }}"
+    interval: "{{ 1 * minutes }}"
     notify: "telegram"
