@@ -1,5 +1,11 @@
+minutes: 1
+hours: 60
+days: 1440
+weeks: 10080
+
 checks_templates:
   bullshit:
     plugin: "check_file"
     argument: "/tmp/bullshit"
+    interval: "{{ 2 * hours }}"
     notify: "telegram"
