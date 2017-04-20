@@ -4,4 +4,4 @@ config_templates:
     tmpl_dest: /etc/monit/monitrc
     tmpl_owner: root
     tmpl_group: root
-    tmpl_mode: 600
+    tmpl_mode: 644
