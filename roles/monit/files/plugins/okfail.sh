@@ -1,4 +1,5 @@
 function ok() {
+    echo $MONIT_DESCRIPTION >> /tmp/monit_okail.log
     echo -n "OK - "$1
     exit 0
 }
