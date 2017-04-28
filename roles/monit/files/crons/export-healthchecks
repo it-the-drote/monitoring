@@ -1,0 +1,1 @@
+*/5 * * * * www-data mongoexport --port 27018 -d monitoring -c checks --jsonArray > /var/www/healthchecks/healthchecks.json

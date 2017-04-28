@@ -39,6 +39,43 @@
     group: root
   become: true
 
+- name: Install cronjobs
+  copy:
+    src: roles/monit/files/crons/export-healthchecks
+    dest: /etc/cron.d/export-healthchecks
+    mode: 0644
+    owner: root
+    group: root
+  become: true
+
+- name: Install nginx config
+  copy:
+    src: roles/monit/files/nginx/healthchecks.nginx
+    dest: /etc/nginx/sites-enabled/healthchecks.nginx
+    mode: 0644
+    owner: root
+    group: root
+  become: true
+
+- name: Create root path for Nginx
+  file:
+    path: /var/www/healthchecks
+    state: directory
+    mode: 0755
+    owner: www-data
+    group: www-data
+  become: true
+
+- name: Test Nginx config
+  command: "nginx -t"
+  become: true
+
+- name: Restart Nginx
+  service:
+    name: "nginx"
+    state: restarted
+  become: true
+
 - name: Test Monit config
   command: "monit -t"
   become: true

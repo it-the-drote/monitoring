@@ -1,0 +1,13 @@
+server {
+  listen 80;
+  listen [::]:80;
+  server_name healthchecks.it-the-drote.tk;
+
+  access_log /var/log/nginx/healthchecks.log;
+  location / {
+    root /var/www/healthchecks;
+    autoindex on;
+    add_header "Access-Control-Allow-Origin" *;
+    charset utf-8;
+  }
+}
