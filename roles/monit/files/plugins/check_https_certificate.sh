@@ -9,7 +9,7 @@ let delta="pubdate_unix - current_date"
 let days="delta/86400"
 
 if test $delta -lt 2592000; then
-    fail "The certificate of $1 will expire in $days days!"
+    fail "The certificate of $1 will expire in $days days!" $DESCRIPTION $ENVIRONMENT
 else
-    ok "Certificate is ok."
+    ok "Certificate is ok." $DESCRIPTION $ENVIRONMENT
 fi
