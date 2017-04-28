@@ -9,7 +9,7 @@ checks_templates:
     argument: "/tmp/bullshit"
     interval: "{{ 1 * minutes }}"
     description: "Bullshit file"
-    environment: "internal"
+    environment: "external"
     notify: "telegram"
   nextcloud_https:
     plugin: "check_https_certificate"
