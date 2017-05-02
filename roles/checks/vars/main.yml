@@ -18,6 +18,13 @@ checks_templates:
     description: "Nextcloud HTTPS certificate"
     environment: "internal"
     notify: "telegram"
+  transmission_https:
+    plugin: "check_https_certificate"
+    argument: "transmission.it-the-drote.tk"
+    interval: "{{ 1 * days }}"
+    description: "Transmission HTTPS certificate"
+    environment: "internal"
+    notify: "telegram"
   xmpp_server_ssl:
     plugin: "check_xmpp_certificate"
     argument: "it-the-drote.tk"
