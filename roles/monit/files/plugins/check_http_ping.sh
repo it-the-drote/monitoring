@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /etc/sensu/lib/okfail.sh
+source /etc/monit/plugins/okfail.sh
 
 status=`curl -k -s --connect-timeout 10 --max-time 10 $1`
 
