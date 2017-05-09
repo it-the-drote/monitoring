@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source /etc/monit/handlers/tickets.sh
+
 text=""
 tail="\\\\nCheck name: $MONIT_SERVICE\\\\nDescription: $MONIT_DESCRIPTION"
 

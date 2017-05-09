@@ -1,6 +1,7 @@
 DESCRIPTION=$2
 ENVIRONMENT=$3
 
+
 function ok() {
     if [[ $3 = 'external' ]]; then
       mongo --quiet --port 27018 monitoring --eval 'db.checks.update({name: "'"$2"'"}, {name: "'"$2"'", status: 0}, { upsert: true })'
