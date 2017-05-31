@@ -95,3 +95,10 @@ checks_templates:
     description: "Nextcloud services"
     environment: "external"
     notify: "telegram"
+  mysql:
+    plugin: "check_mysql"
+    argument: ""
+    interval: "{{ 1 * minutes }}"
+    description: "MySQL"
+    environment: "external"
+    notify: "telegram"
