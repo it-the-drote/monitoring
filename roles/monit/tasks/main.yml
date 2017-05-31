@@ -39,6 +39,15 @@
     group: root
   become: true
 
+- name: Copy Monit extra scripts
+  copy:
+    src: roles/monit/files/scripts
+    dest: /etc/monit/
+    mode: 0700
+    owner: root
+    group: root
+  become: true
+
 - name: Install cronjobs
   copy:
     src: roles/monit/files/crons/export-healthchecks
