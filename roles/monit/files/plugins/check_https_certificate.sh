@@ -2,7 +2,7 @@
 
 source /etc/monit/plugins/okfail.sh
 
-pubdate=`echo | openssl s_client -connect $1':443' 2>/dev/null | openssl x509 -noout -dates | grep notAfter | cut -f 2 -d '='`
+pubdate=`echo | openssl s_client -servername $1 -connect $1':443' 2>/dev/null | openssl x509 -noout -dates | grep notAfter | cut -f 2 -d '='`
 pubdate_unix=`date +%s -d "$pubdate"`
 current_date=`date +%s`
 let delta="pubdate_unix - current_date"
