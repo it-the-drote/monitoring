@@ -2,9 +2,9 @@
 
 source /etc/monit/plugins/okfail.sh
 
-status=`curl -k -s --connect-timeout 10 --max-time 10 $1`
+status=`curl -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 10 $1`
 
-if [[ $status == "OK" ]]; then
+if [[ $status == "200" ]]; then
     ok "Web-interface is OK"
 else
     fail "Web-interface is down"
