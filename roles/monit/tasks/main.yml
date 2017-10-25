@@ -50,7 +50,7 @@
 
 - name: Install cronjobs
   copy:
-    src: roles/monit/files/crons
+    src: roles/monit/files/crons/
     dest: /etc/cron.d/
     mode: 0644
     owner: root
