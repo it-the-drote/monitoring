@@ -1,0 +1,1 @@
+0 2 * * * root /etc/monit/scripts/db-backup.sh
