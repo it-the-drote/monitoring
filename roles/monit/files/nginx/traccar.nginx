@@ -1,0 +1,10 @@
+server {
+  listen 80;
+  listen [::]:80;
+  server_name traccar.it-the-drote.tk;
+  access_log /var/log/nginx/traccar_access.log traccar;
+
+  location / {
+    return 200;
+  }
+}

@@ -59,8 +59,17 @@
 
 - name: Install nginx config
   copy:
-    src: roles/monit/files/nginx/healthchecks.nginx
-    dest: /etc/nginx/sites-enabled/healthchecks.nginx
+    src: roles/monit/files/nginx/
+    dest: /etc/nginx/sites-enabled/
+    mode: 0644
+    owner: root
+    group: root
+  become: true
+
+- name: Install nginx config drop-in
+  copy:
+    src: roles/monit/files/nginx.d/
+    dest: /etc/nginx/conf.d/
     mode: 0644
     owner: root
     group: root
