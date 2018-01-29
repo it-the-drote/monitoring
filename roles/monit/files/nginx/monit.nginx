@@ -1,0 +1,9 @@
+server {
+  listen 127.0.0.1:60000;
+  
+  server_name _;
+  
+  location / {
+    proxy_pass http://unix:/var/run/monit.sock:/;
+  }
+}
