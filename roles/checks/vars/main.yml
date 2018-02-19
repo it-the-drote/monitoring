@@ -130,3 +130,10 @@ checks_templates:
     description: "Orphaned files"
     environment: "internal"
     notify: "telegram"
+  orangepi_nfs_share:
+    plugin: "check_remote_filesystem"
+    argument: "/var/storage/nfs"
+    interval: "{{ 1 * minutes }}"
+    description: "Orange Pi NFS share"
+    environment: "internal"
+    notify: "telegram"
