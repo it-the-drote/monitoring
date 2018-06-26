@@ -4,13 +4,6 @@ days: 1440
 weeks: 10080
 
 checks_templates:
-  bullshit:
-    plugin: "check_file"
-    argument: "/tmp/bullshit"
-    interval: "{{ 1 * minutes }}"
-    description: "Bullshit file"
-    environment: "external"
-    notify: "telegram"
   nextcloud_https:
     plugin: "check_https_certificate"
     argument: "cloud.it-the-drote.tk"
@@ -58,13 +51,6 @@ checks_templates:
     argument: "/dev/vda1"
     interval: "{{ 3 * minutes }}"
     description: "Free space on disk"
-    environment: "external"
-    notify: "telegram"
-  main_website:
-    plugin: "check_http_ping"
-    argument: "http://it-the-drote.tk/ping"
-    interval: "{{ 1 * minutes }}"
-    description: "IT The Drote website"
     environment: "external"
     notify: "telegram"
   api_website:
