@@ -105,7 +105,7 @@ checks_templates:
   orangepi_nfs_share:
     plugin: "check_remote_filesystem"
     argument: "/var/storage/nfs"
-    interval: "{{ 1 * minutes }}"
-    description: "Orange Pi NFS share"
+    interval: "{{ 10 * minutes }}"
+    description: "NFS share"
     environment: "internal"
     notify: "telegram"
