@@ -1,9 +1,6 @@
-- name: Collecting Facts
-  hosts: production
-  gather_facts: yes
-
 - name: Deploy checks
   hosts: production
+  gather_facts: no
   roles:
     - test
     - checks
