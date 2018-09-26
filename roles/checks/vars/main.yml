@@ -95,13 +95,6 @@ checks_templates:
     description: "MySQL"
     environment: "external"
     notify: "telegram"
-  orphaned_files:
-    plugin: "check_orphaned_files"
-    argument: ""
-    interval: "{{ 1 * minutes }}"
-    description: "Orphaned files"
-    environment: "internal"
-    notify: "telegram"
   orangepi_nfs_share:
     plugin: "check_remote_filesystem"
     argument: "/var/storage/nfs"
