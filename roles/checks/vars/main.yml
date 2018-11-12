@@ -67,20 +67,6 @@ checks_templates:
     description: "API HTTPS certificate"
     environment: "internal"
     notify: "telegram"
-  http2ssh_https:
-    plugin: "check_https_certificate"
-    argument: "http2ssh.net"
-    interval: "{{ 8 * hours }}"
-    description: "HTTP2SSH HTTPS certificate"
-    environment: "internal"
-    notify: "telegram"
-  http2ssh_website:
-    plugin: "check_http_ping"
-    argument: "https://http2ssh.net"
-    interval: "{{ 1 * minutes }}"
-    description: "HTTP2SSH website"
-    environment: "external"
-    notify: "telegram"
   nextcloud_website:
     plugin: "check_http_ping"
     argument: "https://cloud.it-the-drote.tk/status.php"
@@ -94,11 +80,4 @@ checks_templates:
     interval: "{{ 1 * minutes }}"
     description: "MySQL"
     environment: "external"
-    notify: "telegram"
-  orangepi_nfs_share:
-    plugin: "check_remote_filesystem"
-    argument: "/var/storage/nfs"
-    interval: "{{ 10 * minutes }}"
-    description: "NFS share"
-    environment: "internal"
     notify: "telegram"
