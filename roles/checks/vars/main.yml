@@ -70,7 +70,7 @@ checks_templates:
   nextcloud_website:
     plugin: "check_http_ping"
     argument: "https://cloud.it-the-drote.tk/status.php"
-    interval: "{{ 1 * minutes }}"
+    interval: "{{ 10 * minutes }}"
     description: "Nextcloud services"
     environment: "external"
     notify: "telegram"
