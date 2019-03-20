@@ -1,1 +1,1 @@
-0 2 * * 1 certbot renew --post-hook "/bin/systemctl reload nginx.service prosody.service" >> /var/log/
+0 2 * * 1 certbot renew --post-hook "/bin/systemctl reload nginx.service prosody.service" >> /var/log/cert-update.log
