@@ -1,1 +1,1 @@
-0 2 1 */2 * . /etc/datasources/cloudflare-env; /etc/monit/scripts/acme.sh --issue --force --dns dns_cf -d 'it-the-drote.tk' -d '*.it-the-drote.tk' --fullchain-file /etc/ssl/acme/star.it-the-drote.tk-fullchain.pem
+0 2 * * 1 certbot renew --post-hook "/bin/systemctl reload nginx.service prosody.service" >> /var/log/
