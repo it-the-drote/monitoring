@@ -5,10 +5,9 @@
   ignore_errors: true
 
 - name: Install Monit
-  apt: name={{ item }} state=installed
-  with_items:
-    - monit
-    - jq
+  apt:
+    name: [ monit, jq ]
+    state: present
   become: true
 
 - name: Install Monit configs
