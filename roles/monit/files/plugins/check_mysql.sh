@@ -6,7 +6,7 @@ eval mysqladmin -u ping -h localhost --password=ping ping > /dev/null 2>&1
 ret_code=$?
 
 if [[ $ret_code == 0 ]]; then
-    ok "MySQL server is alive." "$DESCRIPTION" "$ENVIRONMENT"
+    ok "MySQL server is UP" "$DESCRIPTION" "$ENVIRONMENT"
 else
-    fail "MySQL server is down!" "$DESCRIPTION" "$ENVIRONMENT"
+    fail "MySQL server is DOWN" "$DESCRIPTION" "$ENVIRONMENT"
 fi
