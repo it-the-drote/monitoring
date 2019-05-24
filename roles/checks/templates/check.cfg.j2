@@ -1,2 +1,3 @@
 check program {{ item.key }} with path /etc/monit/plugins/{{ item.value.plugin }}.sh "{{ item.value.argument }}" "{{ item.value.description }}" "{{ item.value.environment }}" "{{ item.key }}" every {{ item.value.interval }} cycles
 	if changed status then exec "/etc/monit/handlers/{{ item.value.notify }}.sh"
+	if status != 0 then alert
