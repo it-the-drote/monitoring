@@ -1,2 +1,2 @@
 */5 * * * * www-data mongoexport --port 27018 -d monitoring -c checks --jsonArray > /var/www/healthchecks/healthchecks.json
-*/5 * * * * www-data curl -u admin:admin --unix-socket /var/run/monit.sock http:/_status/ > /var/www/healthchecks/index.html
+*/5 * * * * root curl -u admin:admin --unix-socket /var/run/monit.sock http:/_status/ > /var/www/healthchecks/index.html
