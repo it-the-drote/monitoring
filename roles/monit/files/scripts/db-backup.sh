@@ -2,7 +2,7 @@
 
 IFS=$'\n'
 ENV_FILE='/etc/datasources/backups.env'
-BACKUP_DIRECTORY='/var/storage/yandex-disk/waste/server/backups/databases/'
+BACKUP_DIRECTORY='/var/storage/nfs/mysql/'
 LOG_FILE='/var/log/apps/database-backups.log'
 PREFIX="[ `date` ] "
 
