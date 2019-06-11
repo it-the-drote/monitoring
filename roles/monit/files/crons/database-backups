@@ -1,1 +1,2 @@
-0 2 * * * root /etc/monit/scripts/db-backup.sh
+0 2 * * * root /etc/monit/scripts/db-backup.sh 2>&1 >> /var/log/apps/db-backup.log
+0 3 * * * root tar czvf /var/storage/nfs/mysql/radicale.tar.gz 2>&1 >> /var/log/apps/dav-backup.log
