@@ -81,3 +81,10 @@ checks_templates:
     description: "MySQL"
     environment: "external"
     notify: "telegram"
+  gitea_website:
+    plugin: "check_http_ping"
+    argument: "https://git.it-the-drote.tk/"
+    interval: "{{ 10 * minutes }}"
+    description: "Git host"
+    environment: "external"
+    notify: "telegram"
