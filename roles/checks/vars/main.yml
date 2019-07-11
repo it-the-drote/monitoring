@@ -7,21 +7,21 @@ checks_templates:
   dav_https:
     plugin: "check_https_certificate"
     argument: "dav.rcmd.space"
-    interval: "{{ 8 * hours }}"
+    interval: "{{ 10 * minutes }}"
     description: "Radicale SSL certificate"
     environment: "internal"
     notify: "telegram"
   transmission_https:
     plugin: "check_https_certificate"
     argument: "transmission.it-the-drote.tk"
-    interval: "{{ 8 * hours }}"
+    interval: "{{ 10 * minutes }}"
     description: "Transmission SSL certificate"
     environment: "internal"
     notify: "telegram"
   xmpp_server_ssl:
     plugin: "check_xmpp_certificate"
     argument: "it-the-drote.tk"
-    interval: "{{ 8 * hours }}"
+    interval: "{{ 10 * minutes }}"
     description: "XMPP server TLS certificate"
     environment: "external"
     notify: "telegram"
@@ -63,7 +63,7 @@ checks_templates:
   api_https:
     plugin: "check_https_certificate"
     argument: "api.it-the-drote.tk"
-    interval: "{{ 8 * hours }}"
+    interval: "{{ 10 * minutes }}"
     description: "API HTTPS certificate"
     environment: "internal"
     notify: "telegram"
