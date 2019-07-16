@@ -2,7 +2,6 @@ DESCRIPTION=$2
 ENVIRONMENT=$3
 
 function ok() {
-    echo "0" > $counter_file
     echo -n "OK - "$1
     exit 0
 }
