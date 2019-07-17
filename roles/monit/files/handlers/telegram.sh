@@ -4,7 +4,7 @@ bot_token=`cat /etc/datasources/pisun.json | jq -r .token`
 chat_id=`cat /etc/datasources/pisun-default-chat`
 
 text=""
-tail="\\nCheck name: $MONIT_SERVICE\\nDescription: $MONIT_DESCRIPTION"
+tail="\\nHostname: $HOSTNAME\\nCheck name: $MONIT_SERVICE\\nDescription: $MONIT_DESCRIPTION"
 
 case $MONIT_PROGRAM_STATUS in
   "0")
