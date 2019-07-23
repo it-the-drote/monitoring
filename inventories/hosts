@@ -1,2 +1,2 @@
 [production]
-stretch.it-the-drote.tk:2222  ansible_user=root
+buster.rcmd.space ansible_user=root
