@@ -67,20 +67,6 @@ checks_templates:
     description: "API HTTPS certificate"
     environment: "internal"
     notify: "telegram"
-  nextcloud_website:
-    plugin: "check_http_ping"
-    argument: "https://cloud.it-the-drote.tk/status.php"
-    interval: "{{ 10 * minutes }}"
-    description: "Nextcloud services"
-    environment: "external"
-    notify: "telegram"
-  mysql:
-    plugin: "check_mysql"
-    argument: ""
-    interval: "{{ 1 * minutes }}"
-    description: "MySQL"
-    environment: "external"
-    notify: "telegram"
   gitea_website:
     plugin: "check_http_ping"
     argument: "https://git.it-the-drote.tk/"
