@@ -67,10 +67,3 @@ checks_templates:
     description: "API HTTPS certificate"
     environment: "internal"
     notify: "telegram"
-  gitea_website:
-    plugin: "check_http_ping"
-    argument: "https://git.it-the-drote.tk/"
-    interval: "{{ 10 * minutes }}"
-    description: "Git host"
-    environment: "external"
-    notify: "telegram"
