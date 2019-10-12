@@ -69,7 +69,7 @@ checks_templates:
     notify: "telegram"
   api_website:
     plugin: "check_http_ping"
-    argument: "http://api.rcmd.space/hooks/healthcheck"
+    argument: "https://api.rcmd.space/hooks/healthcheck"
     interval: "{{ 1 * minutes }}"
     description: "RCMD API website"
     environment: "internal"
