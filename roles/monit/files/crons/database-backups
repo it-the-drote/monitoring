@@ -1,4 +1,2 @@
-# 0 2 * * * root /etc/monit/scripts/db-backup.sh 2>&1 >> /var/log/apps/db-backup.log
-# 0 3 * * * root tar czvf /var/storage/nfs/mysql/radicale.tar.gz 2>&1 >> /var/log/apps/dav-backup.log
 0 4 * * * root duplicity --full-if-older-than 1W --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ >> /var/log/backups.log
 0 5 * * 0 root duplicity remove-all-but-n-full 3 file:///var/storage/wastebox/Backups/radicale/ >> /var/log/backups.log
