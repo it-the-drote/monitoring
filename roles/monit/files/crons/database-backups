@@ -1,6 +1,6 @@
-0 4 * * * root duplicity incremental --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
-0 5 * * 6 root duplicity full --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
-0 5 * * 0 root duplicity remove-all-but-n-full 3 --force file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
-10 4 * * * root duplicity incremental --encrypt-key=F70F4BD3AF1D1B95 /home/git/rcmd/ file:///var/storage/wastebox/Backups/websites/ 2>&1 >> /var/log/backups.log
-10 5 * * 6 root duplicity full --encrypt-key=F70F4BD3AF1D1B95 /home/git/rcmd/ file:///var/storage/wastebox/Backups/websites/ 2>&1 >> /var/log/backups.log
-10 5 * * 0 root duplicity remove-all-but-n-full 3 --force file:///var/storage/wastebox/Backups/websites/ 2>&1 >> /var/log/backups.log
+0 4 * * * root echo -e "\n\n[Making an incremental backup of RADICALE]\n" >> /var/log/backups.log && duplicity incremental --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
+0 5 * * 6 root echo -e "\n\n[Making a full backup of RADICALE]\n" >> /var/log/backups.log && duplicity full --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
+0 5 * * 0 root echo -e "\n\n[Cleaning up RADICALE backups]\n" >> /var/log/backups.log && duplicity remove-all-but-n-full 3 --force file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
+10 4 * * * root echo -e "\n\n[Making an incremental backup of WEBSITES]\n" >> /var/log/backups.log && duplicity incremental --encrypt-key=F70F4BD3AF1D1B95 /home/git/rcmd/ file:///var/storage/wastebox/Backups/websites/ 2>&1 >> /var/log/backups.log
+10 5 * * 6 root echo -e "\n\n[Making a full backup of WEBSITES]\n" >> /var/log/backups.log && duplicity full --encrypt-key=F70F4BD3AF1D1B95 /home/git/rcmd/ file:///var/storage/wastebox/Backups/websites/ 2>&1 >> /var/log/backups.log
+10 5 * * 0 root echo -e "\n\n[Cleaning up WEBSITES backups]\n" >> /var/log/backups.log && duplicity remove-all-but-n-full 3 --force file:///var/storage/wastebox/Backups/websites/ 2>&1 >> /var/log/backups.log
