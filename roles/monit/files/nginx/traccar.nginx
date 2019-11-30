@@ -1,7 +1,7 @@
 server {
   listen 80;
   listen [::]:80;
-  server_name traccar.it-the-drote.tk;
+  server_name traccar.rcmd.space;
   access_log /var/log/nginx/traccar_access.log traccar;
 
   location / {
