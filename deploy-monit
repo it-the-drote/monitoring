@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ansible-playbook -i inventories/hosts monit.yml --diff
+ansible-playbook -i inventories/hosts monit.yml --diff --vault-password-file ~/.ansible/vault.key

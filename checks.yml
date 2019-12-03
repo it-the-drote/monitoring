@@ -1,6 +1,8 @@
 - name: Deploy checks
   hosts: production
   gather_facts: no
+  vars_files:
+    - /Users/rcmd/.ansible/vault.yml
   roles:
     - test
     - checks
