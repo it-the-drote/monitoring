@@ -6,6 +6,7 @@
     group: "root"
     mode: 0600
   with_dict: "{{ checks_templates }}"
+  no_log: true
   become: true
 
 - name: Test Monit config
