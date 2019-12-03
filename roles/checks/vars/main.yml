@@ -81,3 +81,10 @@ checks_templates:
     description: "API HTTPS certificate"
     environment: "internal"
     notify: "telegram"
+  traccar:
+    plugin: "check_traccar_logs"
+    argument: "{{ traccar.device_id }}"
+    interval: "{{ 10 * minutes }}"
+    description: "Check traccar reported location"
+    environment: "internal"
+    notify: "telegram"
