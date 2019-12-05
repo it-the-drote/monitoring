@@ -1,1 +1,1 @@
-0 6 * * * www-data goaccess --log-format=COMMON -o /var/www/healthchecks/builds/goaccess-report/index.html /var/log/nginx/rcmd.space_access-legacy.log
+58 23 * * * www-data goaccess --log-format=COMMON -o /var/www/healthchecks/builds/goaccess-report/index.html /var/log/nginx/rcmd.space_access-legacy.log
