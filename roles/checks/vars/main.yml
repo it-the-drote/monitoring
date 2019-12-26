@@ -87,4 +87,4 @@ checks_templates:
     interval: "{{ 10 * minutes }}"
     description: "Check traccar reported location"
     environment: "internal"
-    notify: "telegram"
+    notify: "traccar"
