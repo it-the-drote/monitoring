@@ -2,7 +2,7 @@
 
 source /etc/monit/plugins/okfail.sh
 
-log_json_line=`grep ${1} /var/log/nginx/traccar_access.log /var/log/nginx/traccar_access.log.1 | tail -n 1`
+log_json_line=`grep ${1} /var/log/nginx/traccar_access.log.1 /var/log/nginx/traccar_access.log | tail -n 1`
 
 device_id=`echo "${log_json_line}" | jq -r .device`
 timestamp=`echo "${log_json_line}" | jq -r .timestamp`
