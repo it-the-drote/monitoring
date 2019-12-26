@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 bot_token=`cat /etc/datasources/pisun.json | jq -r .token`
-chat_id="tiredsysadmin"
+chat_id="@tiredsysadmin"
 
 text="$MONIT_DESCRIPTION"
 
