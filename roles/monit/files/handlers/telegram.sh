@@ -15,6 +15,7 @@ case $MONIT_PROGRAM_STATUS in
     ;;
   "2")
     text="❌❌❌\\n$tail"
+    ;;
 esac
 
 #echo -e '{ "actionType": "SendMessage", "actionSettings": {"chatID": '`cat /etc/datasources/pisun-default-chat`', "replyToMessageID": 0, "text": "'"$text"'", "disableWebPagePreview": true }}' | socat stdio unix-connect:/var/run/apps/pisun.sock
