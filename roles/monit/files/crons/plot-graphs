@@ -1,1 +1,1 @@
-*/5 * * * * www-data /etc/monit/scripts/build_graphs.sh
+* * * * * www-data /etc/monit/scripts/build_graphs.sh
