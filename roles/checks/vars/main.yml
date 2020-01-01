@@ -67,6 +67,13 @@ checks_templates:
     description: "Free space on disk"
     environment: "external"
     notify: "telegram"
+  loadavg:
+    plugin: "check_loadavg"
+    argument: ""
+    internal: "{{ 1 * minutes }}"
+    description: "Load average for 5 minutes"
+    environment: "external"
+    notify: "dummy"
   api_website:
     plugin: "check_http_ping"
     argument: "https://api.rcmd.space/hooks/healthcheck"
