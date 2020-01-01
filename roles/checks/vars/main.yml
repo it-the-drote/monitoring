@@ -70,7 +70,7 @@ checks_templates:
   loadavg:
     plugin: "check_loadavg"
     argument: ""
-    internal: "{{ 1 * minutes }}"
+    interval: "{{ 1 * minutes }}"
     description: "Load average for 5 minutes"
     environment: "external"
     notify: "dummy"
