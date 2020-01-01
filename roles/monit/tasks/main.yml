@@ -6,7 +6,7 @@
 
 - name: Install Monit
   apt:
-    name: [ monit, jq ]
+    name: [ monit, jq, rrdtool ]
     state: present
   become: true
 
