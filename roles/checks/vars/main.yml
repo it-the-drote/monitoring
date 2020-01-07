@@ -68,10 +68,17 @@ checks_templates:
     environment: "external"
     notify: "telegram"
   loadavg:
-    plugin: "check_loadavg"
+    plugin: "plot_loadavg"
     argument: ""
     interval: "{{ 1 * minutes }}"
     description: "Load average for 5 minutes"
+    environment: "external"
+    notify: "dummy"
+  memory_usage:
+    plugin: "plot_memory_usage"
+    argument: ""
+    interval: "{{ 1 * minutes }}"
+    description: "Memory usage"
     environment: "external"
     notify: "dummy"
   api_website:
