@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>GRAPHS</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="refresh" content="60" >
+  </head>
+  <body>
+  <h1>GRAPHS</h1>
+  <hr>
+    {% for item in checks_templates %}
+        {% if item.type == 'graph' %}
+            <img src="/builds/operations/{{ item.name }}.png"></img>
+        {% endif %}
+    {% endfor %}
+  </body>
+</html>
