@@ -110,6 +110,15 @@
     group: root
   become: true
 
+- name: Create RRD pool directory
+  file:
+    path: /var/lib/monit/rrd
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+  become: true
+
 - name: Test Nginx config
   command: "nginx -t"
   become: true
