@@ -24,13 +24,13 @@
     DS:{{ item.name }}:GAUGE:{{ item.interval | int * 120 }}:0:U \
     RRA:AVERAGE:0.5:12:744'
   loop: "{{ checks_templates }}"
-  when: item.type == "graph" and item.state != absent
+  when: item.type == "graph" and item.state != "absent"
   become: true
 
 - name: Plot RRD graphs
   cron:
     name: "Plot graphs for {{ item.name }}"
-    state: "{{ 'present' if item.state == 'touch' }}"
+    state: "{{ 'present' if item.state == 'touch' else 'absent' }}"
     minute: "*/5"
     job: >
       rrdtool graph {{ rrd_graphs_directory }}/{{ item.name }}.png
