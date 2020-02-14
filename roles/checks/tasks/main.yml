@@ -30,6 +30,7 @@
 - name: Plot RRD graphs
   cron:
     name: "Plot graphs for {{ item.name }}"
+    state: "{{ 'present' if item.state == 'touch' }}"
     minute: "*/5"
     job: >
       rrdtool graph {{ rrd_graphs_directory }}/{{ item.name }}.png
