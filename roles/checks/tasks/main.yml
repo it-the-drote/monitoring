@@ -9,6 +9,14 @@
   no_log: true
   become: true
 
+- name: Clean up disabled checks
+  file:
+    path: "/etc/monit/conf.d/{{ item.name }}.cfg"
+    state: "{{ item.state }}"
+  loop: "{{ checks_templates }}"
+  no_log: true
+  become: true
+
 - name: Create RRD files
   command: |
     bash -c 'test -f {{ rrd_directory }}/{{ item.name }}.rrd || rrdtool create {{ rrd_directory }}/{{ item.name }}.rrd \
