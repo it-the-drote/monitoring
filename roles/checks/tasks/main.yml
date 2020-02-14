@@ -24,7 +24,7 @@
     DS:{{ item.name }}:GAUGE:{{ item.interval | int * 120 }}:0:U \
     RRA:AVERAGE:0.5:12:744'
   loop: "{{ checks_templates }}"
-  when: item.type == "graph"
+  when: item.type == "graph" and item.state != absent
   become: true
 
 - name: Plot RRD graphs
