@@ -12,7 +12,7 @@
 - name: Clean up disabled checks
   file:
     path: "/etc/monit/conf.d/{{ item.name }}.cfg"
-    state: "{{ item.state }}"
+    state: "{{ 'touch' if item.state == 'present' else 'absent' }}"
   loop: "{{ checks_templates }}"
   no_log: true
   become: true
@@ -30,7 +30,7 @@
 - name: Plot RRD graphs
   cron:
     name: "Plot graphs for {{ item.name }}"
-    state: "{{ 'present' if item.state == 'touch' else 'absent' }}"
+    state: "{{ item.state }}"
     minute: "*/5"
     job: >
       rrdtool graph {{ rrd_graphs_directory }}/{{ item.name }}.png
