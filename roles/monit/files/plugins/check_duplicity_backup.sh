@@ -3,7 +3,7 @@
 source /etc/monit/plugins/okfail.sh
 
 backup_date=`duplicity collection-status ${1} | grep 'Last full backup date' | cut -f 2- -d ':'`
-timestamp=`date --date="${backup_date} +%s"`
+timestamp=`date --date="${backup_date}" +%s`
 current_timestamp=`date +%s`
 
 let delta="current_timestamp - timestamp"
