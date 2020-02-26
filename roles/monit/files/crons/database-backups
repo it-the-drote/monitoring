@@ -1,3 +1,6 @@
+# HOW TO RESTORE:
+# duplicity restore file:///var/storage/wastebox/Backups/radicale/ ./test-collection/
+#
 0 4 * * * root echo -e "\n\n[ $(date) Making an incremental backup of RADICALE ]\n" >> /var/log/backups.log && duplicity incremental --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
 0 5 * * 6 root echo -e "\n\n[ $(date) Making a full backup of RADICALE ]\n" >> /var/log/backups.log && duplicity full --encrypt-key=F70F4BD3AF1D1B95 /var/lib/radicale/collections/ file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
 0 5 * * 0 root echo -e "\n\n[ $(date) Cleaning up RADICALE backups ]\n" >> /var/log/backups.log && duplicity remove-all-but-n-full 3 --force file:///var/storage/wastebox/Backups/radicale/ 2>&1 >> /var/log/backups.log
