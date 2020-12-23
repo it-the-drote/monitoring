@@ -89,7 +89,7 @@ checks_templates:
     state: "present"
     plugin: "check_http_ping"
     type: "alert"
-    argument: "https://api.rcmd.space/hooks/healthcheck"
+    argument: "https://api.rcmd.space/v4/healthcheck"
     interval: "{{ 1 * minutes }}"
     description: "RCMD API website"
     environment: "internal"
